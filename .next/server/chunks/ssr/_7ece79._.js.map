@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/satriyohutomo/Desktop/Development/project/forager/app/mushroom/page.jsx"],"sourcesContent":["import Link from \"next/link\";\nimport { FaChevronLeft } from \"react-icons/fa\";\n\nexport default function MushroomPage() {\n  return (\n    <>\n      <div className=\"bg-[#397367] p-4 text-white relative rounded-es-3xl rounded-ee-3xl\">\n        <Link href=\"/dashboard\" className=\"p-2 absolute top-1/2 left-2 transform -translate-y-1/2\">\n          <FaChevronLeft className=\"text-2xl\" />\n        </Link>\n        <h1 className=\"text-2xl text-center\">Mushroom Page</h1>\n      </div>\n      <Link href=\"/comparison\">\n        <button>Go to Mushroom Comparison Page</button>\n      </Link>\n    </>\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;AACA;;;;AAEe,SAAS;IACtB,qBACE;;0BACE,8OAAC;gBAAI,WAAU;;kCACb,8OAAC,4JAAA,CAAA,UAAI;wBAAC,MAAK;wBAAa,WAAU;kCAChC,cAAA,8OAAC,8IAAA,CAAA,gBAAa;4BAAC,WAAU;;;;;;;;;;;kCAE3B,8OAAC;wBAAG,WAAU;kCAAuB;;;;;;;;;;;;0BAEvC,8OAAC,4JAAA,CAAA,UAAI;gBAAC,MAAK;0BACT,cAAA,8OAAC;8BAAO;;;;;;;;;;;;;AAIhB"}},
+    {"offset": {"line": 68, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 79, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 79, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

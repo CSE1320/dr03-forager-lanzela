@@ -1,0 +1,27 @@
+/* [project]/styles/NavBar.module.css [app-client] (css) */
+.NavBar-module__Qc37tW__navbar {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.NavBar-module__Qc37tW__navItem {
+  font-size: 24px;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
+.NavBar-module__Qc37tW__navItem:hover {
+  border-radius: 10px;
+  transition: background-color .3s;
+}
+
+/*# sourceMappingURL=styles_NavBar_module_b52d8e.css.map*/

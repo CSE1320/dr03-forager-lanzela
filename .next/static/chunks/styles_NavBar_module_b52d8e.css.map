@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/styles/NavBar.module.css"],"sourcesContent":["/* NavBar.module.css */\n  .navbar {\n    display: flex;\n    justify-content: space-around;\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background-color: #ffffff;\n    padding: 10px 0;\n    z-index: 100;\n  }\n  \n  .navItem {\n    font-size: 24px;\n    cursor: pointer;\n    flex: 1;\n    text-align: center;\n    padding: 10px\n  }\n  \n  .navItem:hover {\n    border-radius: 10px;\n    transition: background-color 0.3s ease;\n  }\n  "],"names":[],"mappings":"AACE;;;;;;;;;;;;AAYA;;;;;;;;AAQA"}},
+    {"offset": {"line": 25, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

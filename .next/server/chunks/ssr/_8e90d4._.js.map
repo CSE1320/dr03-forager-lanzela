@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/satriyohutomo/Desktop/Development/project/forager/app/comparison/page.jsx"],"sourcesContent":["import Link from \"next/link\";\nimport { FaChevronLeft } from \"react-icons/fa\";\n\nexport default function MushroomComparisonPage() {\n  return (\n    <>\n      <div className=\"bg-[#589477] p-4 text-white rounded-es-3xl rounded-ee-3xl sticky top-0 z-20\">\n        <div className=\"relative\">\n          <Link\n            href=\"/mushroom\"\n            className=\"p-2 absolute top-1/2 left-2 transform -translate-y-1/2\"\n          >\n            <FaChevronLeft className=\"text-2xl\" />\n          </Link>\n          <h1 className=\"text-2xl text-center\">Compare</h1>\n        </div>\n      </div>\n      <div className=\"page p-4\">\n        <h1>Mushroom Comparison Page</h1>\n      </div>\n    </>\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;AACA;;;;AAEe,SAAS;IACtB,qBACE;;0BACE,8OAAC;gBAAI,WAAU;0BACb,cAAA,8OAAC;oBAAI,WAAU;;sCACb,8OAAC,4JAAA,CAAA,UAAI;4BACH,MAAK;4BACL,WAAU;sCAEV,cAAA,8OAAC,8IAAA,CAAA,gBAAa;gCAAC,WAAU;;;;;;;;;;;sCAE3B,8OAAC;4BAAG,WAAU;sCAAuB;;;;;;;;;;;;;;;;;0BAGzC,8OAAC;gBAAI,WAAU;0BACb,cAAA,8OAAC;8BAAG;;;;;;;;;;;;;AAIZ"}},
+    {"offset": {"line": 75, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 86, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 86, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
