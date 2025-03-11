@@ -1,7 +1,8 @@
-import Link from "next/link";
+"use client";
+import { useRouter } from "next/navigation";
 import { TbAlertTriangleFilled } from "react-icons/tb";
 
-const MushroomCard = ({
+export default function MushroomCard({
   label,
   img,
   href,
@@ -9,9 +10,21 @@ const MushroomCard = ({
   flag,
   isViewDanger,
   isViewPercentage,
-}) => {
+}) {
+  const router = useRouter();
+
+  function setScreen(path) {
+    router.push(path);
+  }
+
   return (
-    <Link href={href}>
+    <a
+      href={href}
+      onClick={(e) => {
+        e.preventDefault();
+        setScreen(href);
+      }}
+    >
       <div className="bg-white pt-2 px-1 pb-5 shadow-md relative z-10">
         <img
           src={img}
@@ -41,8 +54,6 @@ const MushroomCard = ({
         )}
       </div>
       <p className="mt-2 text-center text-sm font-semibold">{label}</p>
-    </Link>
+    </a>
   );
-};
-
-export default MushroomCard;
+}

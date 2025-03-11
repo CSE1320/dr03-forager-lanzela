@@ -1,13 +1,18 @@
 "use client";
-
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Message from "@/components/Message";
 import Mushroom from "@/components/Mushroom";
 import SimilarMatchList from "@/components/SimilarMatchList";
 
 export default function MushroomPage() {
+  const router = useRouter();
+
+  function setScreen(path) {
+    router.push(path);
+  }
+
   const [isModalAlertOpen, setIsModalAlertOpen] = useState(false);
 
   const [favorites, setFavorites] = useState(() => {
@@ -40,15 +45,24 @@ export default function MushroomPage() {
 
   return (
     <div className={isModalAlertOpen ? "overflow-hidden h-[836px]" : ""}>
+      {/* Header */}
       <div className="bg-[#589477] p-4 text-white rounded-es-3xl rounded-ee-3xl sticky top-0 z-20 h-[100px]">
         <div className="relative">
-          <Link href="/dashboard" className="p-2 absolute top-4 left-2 transform -translate-y-1/2">
+          <a
+            href="/dashboard"
+            className="p-2 absolute top-4 left-2 transform -translate-y-1/2"
+            onClick={(e) => {
+              e.preventDefault();
+              setScreen("/dashboard");
+            }}
+          >
             <FaChevronLeft className="text-2xl" />
-          </Link>
+          </a>
           <h1 className="text-3xl text-center mt-4">Match Result</h1>
         </div>
       </div>
 
+      {/* Body */}
       <div className="py-4 px-8">
         <div className="flex justify-between items-center gap-2 mb-2">
           <p className="text-sm">Not what you expect?</p>
@@ -60,10 +74,17 @@ export default function MushroomPage() {
         <Message />
 
         <div className="flex justify-end mt-6">
-          <Link href="/comparison" className="flex items-center gap-2 p-1 text-sm text-[#888787]">
+          <a
+            href="/comparison"
+            className="flex items-center gap-2 p-1 text-sm text-[#888787]"
+            onClick={(e) => {
+              e.preventDefault();
+              setScreen("/comparison");
+            }}
+          >
             Compare
             <FaChevronRight />
-          </Link>
+          </a>
         </div>
 
         <Mushroom className="mt-2" />
@@ -96,4 +117,3 @@ export default function MushroomPage() {
     </div>
   );
 }
-
