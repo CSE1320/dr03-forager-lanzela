@@ -23,6 +23,8 @@ export default function PhotoSearchPage() {
       facingMode: "environment",
       width: { ideal: 1280 },
       height: { ideal: 720 },
+      zoom: 1, // Explicitly set zoom to default
+      aspectRatio: 16 / 9, // Ensures the correct width/height ratio
     },
   };
 
@@ -30,33 +32,50 @@ export default function PhotoSearchPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // On mount, attempt to start the camera
   useEffect(() => {
-    if (typeof window !== "undefined") { // ✅ Ensure client-side execution
+    if (typeof window !== "undefined" && !cameraActive) {
       startCamera();
     }
+    
     return () => {
-      stopCamera();
+      stopCamera(); // Ensure cleanup when unmounting
     };
   }, []);
-
+  
+  
   // Start camera
   async function startCamera() {
     try {
       setCameraError(false);
+  
+      // Stop any existing stream before starting a new one
+      if (streamRef.current) {
+        stopCamera();
+      }
+  
       const stream = await navigator.mediaDevices.getUserMedia(constraints);
       streamRef.current = stream;
-
+  
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
-        await videoRef.current.play();
-        setCameraActive(true);
+  
+        // Wait for the video element to load metadata before playing
+        videoRef.current.onloadedmetadata = async () => {
+          try {
+            await videoRef.current.play();
+            setCameraActive(true);
+          } catch (playError) {
+            console.error("Video playback failed:", playError);
+          }
+        };
       }
     } catch (err) {
       console.error("Camera access denied:", err);
       setCameraError(true);
     }
   }
+  
+
 
   // Stop camera
   function stopCamera() {
@@ -179,7 +198,8 @@ export default function PhotoSearchPage() {
               ref={videoRef}
               autoPlay
               playsInline
-              className="absolute inset-0 w-full h-full object-cover"
+              muted
+              className="absolute inset-0 w-full h-full contain"
             />
 
             {/* Focus Box in the center */}

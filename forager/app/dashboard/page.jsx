@@ -72,11 +72,11 @@ export default function DashboardPage() {
 return (
   <div className="page">
     {/* Header Section with SVG Background */}
-    <div className="relative p-6 bg-[#589477] pb-[80px] overflow-hidden">
-      <div className="absolute top-0 right-0 flex justify-end">
+    <div className="relative p-6 bg-[#589477] pb-[50px] overflow-hidden ">
+      <div className="absolute top-0 right-0 flex justify-end ">
         <img
           src="/header_bg.svg"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover "
         />
       </div>
 
@@ -93,7 +93,7 @@ return (
     </div>
 
     {/* Bottom Section */}
-    <div className="bottom-[50px] bg-[#f2f2f2] p-6 rounded-ss-3xl rounded-se-3xl">
+    <div className="bottom-[50px] bg-[#f2f2f2] p-6 rounded-es-3xl rounded-ee-3xl">
       {/* Search bar */}
       <div className="mb-8">
         <Search
