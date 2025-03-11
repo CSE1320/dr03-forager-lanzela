@@ -17,6 +17,7 @@ const mushrooms = [
     danger: true,
     percentage: 90,
     flag: "danger",
+    region: "Texas",
   },
   {
     label: "Paddy Straw",
@@ -33,6 +34,7 @@ const mushrooms = [
     danger: true,
     percentage: 90,
     flag: "safe",
+    region: "Texas",
   },
   {
     label: "False Death Cap",

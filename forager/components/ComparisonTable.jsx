@@ -66,7 +66,7 @@ const ComparisonTable = ({ className }) => {
         <div className="">
           <div className="bg-white pt-2 px-1 pb-5 shadow-md">
             <div className="mb-2 flex items-center gap-2 h-[23px]">
-              <img src="/danger-skeleton.svg" alt="danger" />
+              <img src="/icons/skull.png" alt="danger" />
               <div className="p-1 text-[10px] rounded-lg bg-red-500 text-white flex items-center gap-1">
                 <TbAlertTriangle />
                 90% Match

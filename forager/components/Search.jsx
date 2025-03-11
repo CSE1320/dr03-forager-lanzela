@@ -4,7 +4,8 @@ import { useState } from "react";
 import { FaFilter } from "react-icons/fa";
 import Filter from "./FilterSettings";
 
-const Search = () => {
+
+const Search = ({ value, onChange, existingFilters, onApply }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   return (
@@ -15,6 +16,9 @@ const Search = () => {
             type="text"
             placeholder="Search"
             className="w-full px-4 py-2 rounded-full text-sm"
+            // Controlled by parent
+            value={value}
+            onChange={onChange}
           />
         </div>
         <button
@@ -25,8 +29,13 @@ const Search = () => {
         </button>
       </div>
 
-      {/* Filter Component */}
-      <Filter isOpen={isFilterOpen} onClose={() => setIsFilterOpen(false)} />
+      {/* FilterSettings modal is in the same file, but we pass the parent's filters and callback */}
+      <Filter
+        isOpen={isFilterOpen}
+        onClose={() => setIsFilterOpen(false)}
+        existingFilters={existingFilters}
+        onApply={onApply}   // Tells parent "apply these filters"
+      />
     </>
   );
 };
