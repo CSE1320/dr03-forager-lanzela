@@ -29,11 +29,11 @@ const SimilarMatchList = ({ className }) => {
       </div>
 
       {isModalAlertOpen && (
-        <div className="absolute z-30 top-0 left-0 w-full h-full flex justify-center items-center p-4">
+        <div className="fixed z-30 top-0 left-0 w-full h-full flex justify-center items-center p-4">
           <Message
             type="success"
             hideHeader
-            message="Percentages indicate lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            message=" Percentages indicate lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             onClose={() => {
               setIsModalAlertOpen(false);
               localStorage.setItem("isModalAlertOpen", "false");

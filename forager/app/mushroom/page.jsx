@@ -40,12 +40,12 @@ export default function MushroomPage() {
 
   return (
     <div className={isModalAlertOpen ? "overflow-hidden h-[836px]" : ""}>
-      <div className="bg-[#589477] p-4 text-white rounded-es-3xl rounded-ee-3xl sticky top-0 z-20">
+      <div className="bg-[#589477] p-4 text-white rounded-es-3xl rounded-ee-3xl sticky top-0 z-20 h-[100px]">
         <div className="relative">
-          <Link href="/dashboard" className="p-2 absolute top-1/2 left-2 transform -translate-y-1/2">
+          <Link href="/dashboard" className="p-2 absolute top-4 left-2 transform -translate-y-1/2">
             <FaChevronLeft className="text-2xl" />
           </Link>
-          <h1 className="text-2xl text-center">Match Result</h1>
+          <h1 className="text-3xl text-center mt-4">Match Result</h1>
         </div>
       </div>
 
@@ -85,7 +85,7 @@ export default function MushroomPage() {
         <div className="absolute z-30 top-0 left-0 w-full h-full flex justify-center items-center p-4 backdrop-blur-md">
           <Message
             header="ATTENTION!"
-            message="Our system can make mistakes! Remember to verify important information..."
+            message="Our system can make mistakes! Remember to verify important information and use your own judgement to determine if any mushroom is safe. Be sure to use the “Report Error” button if you suspect a mistake."
             onClose={() => {
               setIsModalAlertOpen(false);
               localStorage.setItem("isModalAlertOpen", "false");

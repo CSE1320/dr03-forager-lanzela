@@ -68,61 +68,70 @@ export default function DashboardPage() {
     return matchesSearch && matchesRegion && matchesTag && matchesType;
   });
 
-  return (
-    <div className="page">
-      <div className="p-6 bg-[#589477] pb-[80px]">
-        <div className="flex items-end justify-between text-white">
-          <div>
-            <p>Hi,</p>
-            <h1 className="text-3xl font-bold">Chantelle</h1>
-          </div>
-          <div className="size-[40px] flex items-center justify-center rounded-full bg-[#5F464B] font-bold text-xl">
-            C
-          </div>
-        </div>
+
+return (
+  <div className="page">
+    {/* Header Section with SVG Background */}
+    <div className="relative p-6 bg-[#589477] pb-[80px] overflow-hidden">
+      <div className="absolute top-0 right-0 flex justify-end">
+        <img
+          src="/header_bg.svg"
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      <div className="bottom-[50px] bg-[#f2f2f2] p-6 rounded-ss-3xl rounded-se-3xl">
-        {/* Search bar (with the filter modal inside) */}
-        <div className="mb-8">
-          <Search
-            // Parent's searchTerm
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            // Pass the parent's current filters + the apply callback
-            existingFilters={selectedFilters}
-            onApply={handleApplyFilters}
-          />
+      {/* Greeting & Profile */}
+      <div className=" mt-10 relative flex items-end justify-between text-white">
+        <div>
+          <h1 className="text-white text-2xl font-light">Hi,</h1>
+          <h2 className="text-3xl font-bold">Chantelle</h2>
         </div>
-
-        {/* Filter pills */}
-        <div className="mb-4">
-          <h1 className="text-xl font-bold mb-2">My Collection</h1>
-          <div className="flex gap-2">
-            {Object.entries(selectedFilters)
-              .filter(([_, val]) => val)
-              .map(([key, val]) => (
-                <Pill
-                  key={key}
-                  label={val}
-                  selected
-                  onClick={() => {
-                    const updated = { ...selectedFilters, [key]: "" };
-                    setSelectedFilters(updated);
-                    localStorage.setItem("selectedFilters", JSON.stringify(updated));
-                  }}
-                />
-              ))}
-          </div>
-        </div>
-
-        {/* Display mushrooms */}
-        <div className="grid grid-cols-3 gap-4">
-          {filteredMushrooms.map((mushroom) => (
-            <MushroomCard key={mushroom.label} isViewDanger={mushroom.danger} {...mushroom} />
-          ))}
+        <div className="size-[40px] flex items-center justify-center rounded-full bg-[#5F464B] font-bold text-xl">
+          C
         </div>
       </div>
     </div>
-  );
+
+    {/* Bottom Section */}
+    <div className="bottom-[50px] bg-[#f2f2f2] p-6 rounded-ss-3xl rounded-se-3xl">
+      {/* Search bar */}
+      <div className="mb-8">
+        <Search
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          existingFilters={selectedFilters}
+          onApply={handleApplyFilters}
+        />
+      </div>
+
+      {/* Filter pills */}
+      <div className="mb-4">
+        <h1 className="text-xl font-bold mb-2">My Collection</h1>
+        <div className="flex gap-2">
+          {Object.entries(selectedFilters)
+            .filter(([_, val]) => val)
+            .map(([key, val]) => (
+              <Pill
+                key={key}
+                label={val}
+                selected
+                onClick={() => {
+                  const updated = { ...selectedFilters, [key]: "" };
+                  setSelectedFilters(updated);
+                  localStorage.setItem("selectedFilters", JSON.stringify(updated));
+                }}
+              />
+            ))}
+        </div>
+      </div>
+
+      {/* Display mushrooms */}
+      <div className="grid grid-cols-3 gap-4">
+        {filteredMushrooms.map((mushroom) => (
+          <MushroomCard key={mushroom.label} isViewDanger={mushroom.danger} {...mushroom} />
+        ))}
+      </div>
+    </div>
+  </div>
+);
 }

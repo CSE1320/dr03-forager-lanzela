@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { FaFilter } from "react-icons/fa";
 import Filter from "./FilterSettings";
 
 
@@ -25,7 +24,13 @@ const Search = ({ value, onChange, existingFilters, onApply }) => {
           className="p-3 rounded-full text-[#589477] text-xl"
           onClick={() => setIsFilterOpen(true)}
         >
-          <FaFilter />
+          <img
+          src="/icons/filter.svg"
+          alt="Filter Icon"
+          width={20}
+          height={20}
+          className="flex-shrink-0"
+        />
         </button>
       </div>
 
